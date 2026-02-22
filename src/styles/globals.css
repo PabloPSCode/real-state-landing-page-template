@@ -3,41 +3,41 @@
 @import "../styles/phone-overrides.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {--color-primary-50:  #f0fdf4;}
-@theme {--color-primary-100: #dcfce7;}
-@theme {--color-primary-200: #bbf7d0;}
-@theme {--color-primary-300: #86efac;}
-@theme {--color-primary-400: #4ade80;}
-@theme {--color-primary-500: #009739;}
-@theme {--color-primary-600: #008131;}
-@theme {--color-primary-700: #006628;}
-@theme {--color-primary-800: #004d1f;}
-@theme {--color-primary-900: #003315;}
-@theme {--color-primary-950: #001a0a;}
+@theme {--color-primary-50:  #f8f3ee;}
+@theme {--color-primary-100: #efe4d7;}
+@theme {--color-primary-200: #e0c8ab;}
+@theme {--color-primary-300: #cfaa82;}
+@theme {--color-primary-400: #b98b61;}
+@theme {--color-primary-500: #a57248;}
+@theme {--color-primary-600: #875a39;}
+@theme {--color-primary-700: #6c472f;}
+@theme {--color-primary-800: #513524;}
+@theme {--color-primary-900: #3a2519;}
+@theme {--color-primary-950: #24160f;}
 
-@theme {--color-secondary-50:  #fffdea;}
-@theme {--color-secondary-100: #fef9c3;}
-@theme {--color-secondary-200: #fef08a;}
-@theme {--color-secondary-300: #fde047;}
-@theme {--color-secondary-400: #facc15;}
-@theme {--color-secondary-500: #ffcc29;}
-@theme {--color-secondary-600: #e6b800;}
-@theme {--color-secondary-700: #cca300;}
-@theme {--color-secondary-800: #997a00;}
-@theme {--color-secondary-900: #665200;}
-@theme {--color-secondary-950: #332900;}
+@theme {--color-secondary-50:  #fffdf8;}
+@theme {--color-secondary-100: #fbf4e8;}
+@theme {--color-secondary-200: #f3e6d2;}
+@theme {--color-secondary-300: #e8d5b8;}
+@theme {--color-secondary-400: #dcc39d;}
+@theme {--color-secondary-500: #cdb083;}
+@theme {--color-secondary-600: #b49666;}
+@theme {--color-secondary-700: #92734e;}
+@theme {--color-secondary-800: #70573a;}
+@theme {--color-secondary-900: #4f3d29;}
+@theme {--color-secondary-950: #302316;}
 
-@theme {--color-tertiary-50:  #eff6ff;}
-@theme {--color-tertiary-100: #dbeafe;}
-@theme {--color-tertiary-200: #bfdbfe;}
-@theme {--color-tertiary-300: #93c5fd;}
-@theme {--color-tertiary-400: #60a5fa;}
-@theme {--color-tertiary-500: #002776;}
-@theme {--color-tertiary-600: #001f5e;}
-@theme {--color-tertiary-700: #001947;}
-@theme {--color-tertiary-800: #00122f;}
-@theme {--color-tertiary-900: #000c1a;}
-@theme {--color-tertiary-950: #00060d;}
+@theme {--color-tertiary-50:  #f2f7fc;}
+@theme {--color-tertiary-100: #dfeaf7;}
+@theme {--color-tertiary-200: #c2d9ef;}
+@theme {--color-tertiary-300: #9fc1e2;}
+@theme {--color-tertiary-400: #73a4cf;}
+@theme {--color-tertiary-500: #3d7eb5;}
+@theme {--color-tertiary-600: #2f6594;}
+@theme {--color-tertiary-700: #285175;}
+@theme {--color-tertiary-800: #223f59;}
+@theme {--color-tertiary-900: #1f3449;}
+@theme {--color-tertiary-950: #152231;}
 
 @theme {--color-info-50: #eff6ff;}
 @theme {--color-info-100: #dbeafe;}
@@ -88,17 +88,17 @@
 @theme {--color-destructive-950: #2b0009;}
 
 @theme {
-  --color-background: #F6F5F7;  /* light mode */
-  --color-foreground: #1F1F1F;  /* light mode */
-  --color-bg-card: #ffffff;  /* light mode */
-  --color-border-card: #ffffff;  /* light mode */
+  --color-background: #f3eee7;  /* light mode */
+  --color-foreground: #33271d;  /* light mode */
+  --color-bg-card: #fffdf8;  /* light mode */
+  --color-border-card: #e7dac8;  /* light mode */
 
     --font-primary: "Work Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
                Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
                "Segoe UI Emoji", sans-serif;
 
   /* Secondary font (e.g., for headings) */
-  --font-secondary: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+  --font-secondary: "Roboto", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
                     Roboto, "Helvetica Neue", Arial, "Noto Sans",
                     "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
 
@@ -106,10 +106,10 @@
 
 /* Class override so a `.dark` class wins regardless of system */
 :root.dark {
-  --color-background: #111111;
-  --color-foreground: #FFFEFC;
-  --color-bg-card: #222222;
-  --color-border-card: #444444;
+  --color-background: #1a1511;
+  --color-foreground: #f6eee3;
+  --color-bg-card: #2a211b;
+  --color-border-card: #3d2f25;
 }
 
 
@@ -119,11 +119,15 @@
 
 html{
   scroll-behavior: smooth;
-  font-family: var(--font-primary);
+  font-family: "Work Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+               "Segoe UI Emoji", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, button, a {
-  font-family: var(--font-secondary);
+  font-family: "Raleway", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+               "Segoe UI Emoji", sans-serif;
 }
 
 button{

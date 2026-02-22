@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { type JSX } from "react";
 import clsx from "clsx";
+import { type JSX } from "react";
 
 export type Direction = "r" | "l" | "t" | "b" | "tr" | "tl" | "br" | "bl";
 
@@ -56,7 +56,9 @@ export default function GradientText({
   }[direction];
 
   return (
+    //@ts-ignore
     <Tag
+      //@ts-ignore
       className={clsx(
         // gradiente aplicado ao fundo do texto
         dirClass,
@@ -65,12 +67,10 @@ export default function GradientText({
         // faz o texto “pegar” o bg
         "bg-clip-text text-transparent inline- leading-tight",
         // tipicamente títulos usam peso maior; deixe flexível via className
-        className
+        className,
       )}
     >
       {content}
     </Tag>
   );
 }
-
-
