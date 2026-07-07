@@ -211,6 +211,7 @@ const SelectInput = forwardRef<SelectInstance<Option>, SelectInputProps>(
           <Select
             ref={ref}
             inputId={selectId}
+            instanceId={selectId}
             className={clsx(
               // permite ajustar largura por variante
               widthVariant === "mid" ? "max-w-sm" : "w-full",
@@ -223,7 +224,9 @@ const SelectInput = forwardRef<SelectInstance<Option>, SelectInputProps>(
             isSearchable={isSearchable}
             placeholder={placeholder}
             onChange={handleChange}
-            menuPortalTarget={document.body} // evita clipping em modais/overflows
+            menuPortalTarget={
+              typeof document !== "undefined" ? document.body : undefined
+            } // evita clipping em modais/overflows (SSR-safe)
             noOptionsMessage={({ inputValue }) =>
               !inputValue
                 ? inputValue

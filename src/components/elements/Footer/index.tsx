@@ -79,7 +79,7 @@ const Top: React.FC<TopGridProps> = ({
     <div
       {...rest}
       className={clsx(
-        "mx-auto w-full max-w-7xl px-4 sm:px-6",
+        "mx-auto w-full max-w-5xl px-4 sm:px-6",
         "py-8 sm:py-10",
         "grid grid-cols-1 gap-6 sm:grid-cols-2",
         bordered && "border-b border-foreground/50",
@@ -173,7 +173,7 @@ const SocialRow: React.FC<SocialRowProps> = ({
         className
       )}
     >
-      <div className="mx-auto flex w-full max-w-7xl  justify-between gap-4 px-4 py-4 sm:px-6 flex-col items-center sm:flex-row">
+      <div className="mx-auto flex w-full max-w-5xl  justify-between gap-4 px-4 py-4 sm:px-6 flex-col items-center sm:flex-row">
         {/* Conteúdo à esquerda (opcional) passado como children */}
         <div className="min-w-0 flex-1">
           {children ? (
@@ -216,7 +216,7 @@ const Bottom: React.FC<BottomProps> = ({
         className
       )}
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-4 text-sm sm:px-6 flex flex-col items-center sm:flex-row">
+      <div className="mx-auto w-full max-w-5xl px-4 py-4 text-sm sm:px-6 flex flex-col items-center sm:flex-row">
         {children}
       </div>
     </div>

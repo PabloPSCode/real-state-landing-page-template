@@ -33,7 +33,7 @@ export default function Button({
   return (
     <button
       className={clsx(
-        `flex items-center justify-center w-fit px-3 py-2 sm:px-4 sm:py-3 rounded-md  ${
+        `flex items-center justify-center w-fit whitespace-nowrap px-3 py-2 sm:px-4 sm:py-3 rounded-md  ${
           variant === "filled"
             ? "bg-primary-500 text-foreground"
             : variant === "outlined"

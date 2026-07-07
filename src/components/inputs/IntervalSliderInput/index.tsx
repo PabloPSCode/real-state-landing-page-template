@@ -1,6 +1,5 @@
 'use client';
 
-import { getThemeColor } from "@/utils/colors";
 import clsx from "clsx";
 import type { SliderProps } from "rc-slider";
 import Slider from "rc-slider";
@@ -79,9 +78,9 @@ export default function IntervalSliderInput({
   customStyles,
   ...rest
 }: IntervalSliderInputProps) {
-  // ======= Cores do tema =======
-  const primary500 = getThemeColor("--color-primary-500") ?? "#2563eb";
-  const primary600 = getThemeColor("--color-primary-600") ?? "#1d4ed8";
+  // ======= Cores do tema (CSS vars — SSR-safe, sem getComputedStyle) =======
+  const primary500 = "var(--color-primary-500, #2563eb)";
+  const primary600 = "var(--color-primary-600, #1d4ed8)";
 
   // ======= Estado inicial =======
   const initial: Pair = useMemo(() => {
@@ -141,7 +140,7 @@ export default function IntervalSliderInput({
 
       <div
         className={clsx(
-          "bg-background px-2 py-0",
+          "bg-transparent px-2 py-0",
           errorMessage &&
             "border-red-500 focus-within:border-red-600 focus-within:ring-red-400/40"
         )}

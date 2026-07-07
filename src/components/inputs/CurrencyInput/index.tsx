@@ -15,6 +15,12 @@ export interface CurrencyInputProps
   errorMessage?: string;
   /** Classe opcional para o contêiner externo. */
   containerClassName?: string;
+  /** Callback com os valores formatados/numéricos (react-number-format). */
+  onValueChange?: (values: {
+    value: string;
+    floatValue?: number;
+    formattedValue: string;
+  }) => void;
 }
 
 const CURRENCY_INPUT_MAX_LENGTH = 16; // Ex: R$ 999.999.999,99

@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { Raleway, Work_Sans } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import "../styles/globals.css";
 
-const workSans = Work_Sans({
-  variable: "--font-work-sans",
+// Body / UI / buttons — Airbnb Cereal substitute.
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const raleway = Raleway({
-  variable: "--font-raleway",
+// Headings.
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "João Doe Imóveis",
+  title: "Glow Imóveis",
   description:
     "Landing page modelo para imobiliária com foco em imóveis residenciais de alto padrão.",
 };
@@ -26,10 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body
-        className={`${workSans.variable} ${raleway.variable} antialiased`}
-      >
+    <html lang="pt-BR" className={`${inter.variable} ${montserrat.variable}`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>

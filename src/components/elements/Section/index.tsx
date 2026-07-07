@@ -33,7 +33,7 @@ export const Section: React.FC<SectionProps> = ({
     return (
         <section
             className={clsx(
-                size === "full" ? "w-full" : "w-full max-w-7xl mx-auto",
+                size === "full" ? "w-full" : "w-full max-w-5xl mx-auto",
                 "flex flex-col items-center px-8 py-12",
                 "bg-cover bg-center",
                 sectionClassName
@@ -44,28 +44,31 @@ export const Section: React.FC<SectionProps> = ({
                     : undefined
             }
         >
-            {title && (
-                <h1
-                    className={clsx(
-                        "text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-2",
+            {/* Conteúdo interno sempre centralizado e limitado a max-w-5xl */}
+            <div className="flex w-full max-w-5xl flex-col items-center">
+                {title && (
+                    <h1
+                        className={clsx(
+                            "text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-2",
 
-                        titleClassName
-                    )}
-                >
-                    {title}
-                </h1>
-            )}
-            {subtitle && (
-                <h2
-                    className={clsx(
-                        "text-base sm:text-lg  text-foreground/60 font-regular font-secondary text-center",
-                        subtitleClassName
-                    )}
-                >
-                    {subtitle}
-                </h2>
-            )}
-            {children}
+                            titleClassName
+                        )}
+                    >
+                        {title}
+                    </h1>
+                )}
+                {subtitle && (
+                    <h2
+                        className={clsx(
+                            "text-base sm:text-lg  text-foreground/60 font-regular font-secondary text-center",
+                            subtitleClassName
+                        )}
+                    >
+                        {subtitle}
+                    </h2>
+                )}
+                {children}
+            </div>
         </section>
     );
 };

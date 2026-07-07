@@ -352,7 +352,6 @@ const Tooltip: React.FC<React.ComponentProps<typeof RTooltip>> = (props) => (
 
 const ReferenceLine: React.FC<React.ComponentProps<typeof RReferenceLine>> = (
   props
-  // @ts-expect-error allow passthrough
 ) => <RReferenceLine {...props} />;
 
 /* =========================

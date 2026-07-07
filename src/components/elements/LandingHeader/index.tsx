@@ -14,7 +14,7 @@ export interface LandingHeaderRootProps
   bordered?: boolean;
   /** Classe adicional */
   sticky?: boolean;
-  /** Largura máxima do container central (ex.: max-w-7xl) */
+  /** Largura máxima do container central (ex.: max-w-5xl) */
   maxWidthClassName?: string;
 }
 
@@ -26,31 +26,40 @@ const Root: React.FC<LandingHeaderRootProps> = ({
   children,
   ...rest
 }) => {
+  // Altura total do header (linha + py-1) usada no espaçador do modo fixo.
+  const spacerHeight =
+    size === "sm" ? "h-16" : size === "lg" ? "h-[88px]" : "h-[72px]";
+
   return (
-    <div
-      className={clsx(
-        "w-full flex justify-center bg-background text-background z-80 py-1",
-        sticky && "sticky top-0",
-        bordered && "border-b border-foreground/10",
-        className
-      )}
-    >
-      <header
-        {...rest}
-        className={clsx("w-full text-foreground", "px-3 max-w-7xl")}
+    <>
+      <div
+        className={clsx(
+          "w-full flex justify-center bg-background text-background z-80 py-1",
+          sticky && "fixed inset-x-0 top-0",
+          bordered && "border-b border-foreground/10",
+          className
+        )}
       >
-        <div
-          className={clsx(
-            "mx-auto flex w-full items-center justify-between gap-3",
-            size === "sm" && "h-14",
-            size === "md" && "h-16",
-            size === "lg" && "h-20"
-          )}
+        <header
+          {...rest}
+          className={clsx("w-full text-foreground", "mx-auto px-3 max-w-5xl")}
         >
-          {children}
-        </div>
-      </header>
-    </div>
+          <div
+            className={clsx(
+              "mx-auto flex w-full items-center justify-between gap-3",
+              size === "sm" && "h-14",
+              size === "md" && "h-16",
+              size === "lg" && "h-20"
+            )}
+          >
+            {children}
+          </div>
+        </header>
+      </div>
+
+      {/* Espaçador para compensar o header fixo (fora do fluxo). */}
+      {sticky && <div aria-hidden className={spacerHeight} />}
+    </>
   );
 };
 
@@ -196,7 +205,7 @@ const MobileMenuPanel: React.FC<{
   if (!open) return null;
   return (
     <div className="md:hidden absolute left-0 right-0 top-full z-30 w-full border-b border-foreground/10 bg-background/98 backdrop-blur transition">
-      <div className="mx-auto max-w-7xl px-3 py-3">
+      <div className="mx-auto max-w-5xl px-3 py-3">
         <ul className="flex flex-col items-center gap-3">{children}</ul>
         {cta && <div className="mt-3">{cta}</div>}
       </div>

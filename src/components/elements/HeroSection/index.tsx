@@ -44,7 +44,7 @@ export const HeroSection: FC<HeroSectionProps> = ({
   return (
     <section
       className={clsx(
-        size === "full" ? "w-full" : "w-full max-w-7xl mx-auto",
+        size === "full" ? "w-full" : "w-full max-w-5xl mx-auto",
         "flex flex-col items-center px-8 py-12",
         "bg-cover bg-center",
         sectionClassName

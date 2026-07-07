@@ -84,7 +84,7 @@ const InternationalPhoneInput = forwardRef<
     // === Mesma base visual dos inputs de texto/senha ===
     const baseWrapper =
       "flex w-full items-center rounded-md bg-background text-foreground placeholder:text-foreground/50 text-sm sm:text-base border transition bg-white p-0";
-    const baseBorder = "";
+    const baseBorder = ""; // borda gerida em phone-overrides.css (CSS não-layered)
     const enabledFocus =
       "focus-within:border-primary-600 focus-within:ring-2 focus-within:ring-primary-400/40";
     const paddingHeight = "pl-2 py-1 pr-2 sm:pr-3 my-1 h-10"; // alturas/espacamentos padronizados

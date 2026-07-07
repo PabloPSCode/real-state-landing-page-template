@@ -1,7 +1,7 @@
 /* src/styles/phone-overrides.css
-   Remove default borders/shadows from react-international-phone */
+   Normaliza react-international-phone para casar com os demais inputs. */
 
-.react-international-phone-input-container,
+/* Elementos internos: sem borda própria (o container carrega a única borda). */
 .react-international-phone-input,
 .react-international-phone-country-selector,
 .react-international-phone-country-selector-button,
@@ -10,9 +10,19 @@
   box-shadow: none !important;
 }
 
-/* Some builds add a right border on the selector button */
 .react-international-phone-country-selector-button {
   border-right: 0 !important;
+}
+
+/* Container: uma única borda hairline, igual aos inputs de texto. */
+.react-international-phone-input-container {
+  border: 1px solid var(--color-border-card) !important;
+  box-shadow: none !important;
+}
+
+/* Foco: borda destacada (sem ring), no estilo do design system. */
+.react-international-phone-input-container:focus-within {
+  border-color: var(--color-primary-600) !important;
 }
 
 /* Keep focus clean; your component styles will handle focus rings */
